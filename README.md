@@ -17,7 +17,7 @@ Install the host and this plugin in the same Python environment. From an OpenCal
 
 ```powershell
 python -m pip install .
-python -m pip install "git+https://github.com/Elandu/OpenCalcs-AS3600.git@v0.1.0"
+python -m pip install "git+https://github.com/Elandu/OpenCalcs-AS3600.git@v0.1.1"
 ```
 
 For local development:
@@ -79,6 +79,25 @@ python -m build
 Tests require the OpenCalcs host; CI installs the pinned host revision documented in
 [validation](docs/validation.md), then checks the built wheel through the host registry and API.
 See [scope and reference policy](docs/scope.md) for the standard-check roadmap.
+
+## Repeatable verification
+
+[Verification methodology and commands](docs/verification.md) describe the independent
+benchmarks and the HTML results page. [Amendment review](docs/amendment-review.md)
+maps both normative amendments to the implemented scope and documents reproduced
+blockers in the upstream design adapter, which this plugin does not enable.
+
+```powershell
+python -m opencalcs_as3600.verification --output artifacts/mechanics.json
+python -m opencalcs_as3600.upstream_audit --output artifacts/upstream-audit.json
+# The upstream audit returns 1 while its documented design integration blockers remain.
+python -m opencalcs_as3600.reporting --mechanics artifacts/mechanics.json --upstream artifacts/upstream-audit.json --output artifacts/verification.html
+```
+
+Open `artifacts/verification.html` locally to see inputs, expected/calculated values,
+differences, tolerances and outcomes. The report keeps mechanics verification and
+unresolved design integration findings visible. CI generates reports from the installed
+wheel for both supported Python versions.
 
 ## License
 

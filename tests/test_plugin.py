@@ -15,7 +15,7 @@ def test_installed_entry_point_and_descriptor() -> None:
     entry = next(item for item in entry_points(group="opencalcs.plugins") if item.name == "as3600")
     plugin = entry.load()()
     assert plugin.id == "structural.as3600"
-    assert plugin.version == "0.1.0"
+    assert plugin.version == "0.1.1"
     descriptor = plugin.descriptor()
     assert descriptor["calculations"][0]["id"] == CALCULATION_ID
     assert descriptor["calculations"][0]["standard"] is None
@@ -39,7 +39,7 @@ def test_real_host_discovery_run_and_provenance(section_inputs: dict) -> None:
     result = registry.run(CALCULATION_ID, section_inputs)
     assert result["solver"]["version"] == "0.8.0"
     assert result["_provenance"]["engine"]["id"] == "structural.as3600"
-    assert result["_provenance"]["engine"]["version"] == "0.1.0"
+    assert result["_provenance"]["engine"]["version"] == "0.1.1"
     assert result["standard_compliance_evaluated"] is False
 
 
