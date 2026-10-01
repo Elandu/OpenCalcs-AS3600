@@ -1,0 +1,33 @@
+name: CI
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  package:
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        python-version: ["3.11", "3.12", "3.13"]
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-python@v7
+        with:
+          python-version: ${{ matrix.python-version }}
+      - name: Install development tools
+        run: python -m pip install -e ".[dev]"
+      - name: Lint
+        run: ruff check .
+      - name: Check formatting
+        run: ruff format --check .
+      - name: Build wheel and source distribution
+        run: python -m build
+      - name: Install built wheel and pinned OpenCalcs host
+        run: |
+          python -m pip uninstall -y opencalcs-as3600
+          python -m pip install dist/*.whl
+          python -m pip install "opencalcs @ git+https://github.com/Elandu/OpenCalcs.git@fe875fa53678afbd0cce29937d1d7b30a1fb747d"
+      - name: Run package and host integration tests
+        run: python -m pytest -o pythonpath= --import-mode=importlib

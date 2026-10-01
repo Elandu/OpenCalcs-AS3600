@@ -1,0 +1,27 @@
+{
+  "section": {
+    "width_mm": 300,
+    "depth_mm": 500,
+    "bars": [
+      {"id": "B1", "area_mm2": 500, "x_mm": 60, "y_mm": 50},
+      {"id": "B2", "area_mm2": 500, "x_mm": 150, "y_mm": 50},
+      {"id": "B3", "area_mm2": 500, "x_mm": 240, "y_mm": 50}
+    ]
+  },
+  "concrete": {
+    "elastic_modulus_mpa": 30000,
+    "compressive_strength_mpa": 32,
+    "density_kg_m3": 2400,
+    "stress_block_alpha": 0.8,
+    "stress_block_gamma": 0.8,
+    "ultimate_compressive_strain": 0.003
+  },
+  "steel": {
+    "elastic_modulus_mpa": 200000,
+    "yield_strength_mpa": 500,
+    "density_kg_m3": 7850,
+    "fracture_strain": 0.05
+  },
+  "axial_force_kn": 0,
+  "bending_angle_deg": 0
+}
