@@ -35,7 +35,7 @@ exercise its HTTP API, and check attached plugin provenance. CI installs the bui
 running tests and disables the source-path override so these checks exercise the distribution.
 OpenCalcs is pinned to commit `fe875fa53678afbd0cce29937d1d7b30a1fb747d`.
 
-Supported CI interpreters are Python 3.11, 3.12 and 3.13. Engineering approval, authenticated
+Supported CI interpreters are Python 3.12 and 3.13. Engineering approval, authenticated
 production execution and an OpenCalcs-UI concrete workbench are outside this package bootstrap.
 
 ## Bootstrap evidence, 1 October 2026
@@ -45,3 +45,7 @@ the pinned host. Imports resolved from `site-packages`, and all **36 tests passe
 source-path override disabled. One host dependency warning noted the deprecation of the
 HTTPX-backed Starlette test client; there were no failed checks. Ruff lint and formatting,
 bytecode compilation, dependency compatibility, and wheel/sdist builds also passed.
+
+The initial CI matrix exposed that `concreteproperties` 0.8.0 requires Python >=3.12.
+The package now advertises that minimum and tests Python 3.12 and 3.13. The initial Python
+3.11 dependency-install failure was resolved by correcting the declared support range.

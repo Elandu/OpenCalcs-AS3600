@@ -65,8 +65,8 @@ bars, nonfinite numbers, insufficient fracture strain or unsolvable axial loads 
 
 ## Development and validation
 
-Use Python 3.11–3.13. On Windows, keep the virtual environment on a local drive when using a
-mapped network checkout.
+Use Python 3.12 or 3.13; the pinned `concreteproperties` 0.8.0 requires Python 3.12 or newer.
+On Windows, keep the virtual environment on a local drive when using a mapped network checkout.
 
 ```powershell
 python -m pip install -e ".[dev]"
