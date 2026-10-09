@@ -6,7 +6,7 @@ import json
 import pytest
 from concreteproperties.design_codes.as3600 import AS3600
 
-from opencalcs_as3600.upstream_audit import main, run_upstream_audit
+from engcalcs_as3600.upstream_audit import main, run_upstream_audit
 
 
 def test_pinned_dependency_integration_blockers_are_reproduced() -> None:

@@ -3,7 +3,7 @@ from __future__ import annotations
 
 import json
 
-from opencalcs_as3600 import analysis, verification
+from engcalcs_as3600 import analysis, verification
 
 
 def test_independent_report_contains_hand_auditable_nominal_case() -> None:

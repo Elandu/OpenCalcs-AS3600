@@ -78,9 +78,9 @@ reports failures. The mechanics CLI returns 1 if any case fails.
 Use the same Python environment that contains the plugin and pinned dependencies:
 
 ```powershell
-python -m opencalcs_as3600.verification --output artifacts/mechanics.json
-python -m opencalcs_as3600.upstream_audit --output artifacts/upstream-audit.json
-python -m opencalcs_as3600.reporting --mechanics artifacts/mechanics.json --upstream artifacts/upstream-audit.json --output artifacts/verification.html
+python -m engcalcs_as3600.verification --output artifacts/mechanics.json
+python -m engcalcs_as3600.upstream_audit --output artifacts/upstream-audit.json
+python -m engcalcs_as3600.reporting --mechanics artifacts/mechanics.json --upstream artifacts/upstream-audit.json --output artifacts/verification.html
 python -m pytest
 ```
 
@@ -93,7 +93,7 @@ The JSON records retain full numeric precision; HTML values are rounded for read
 ## CI and distribution evidence
 
 CI builds and installs the wheel, then runs tests through the real pinned
-OpenCalcs registry/API with the source-path override disabled. It also generates
+EngCalcs registry/API with the source-path override disabled. It also generates
 mechanics and upstream JSON plus the HTML page for Python 3.12 and 3.13, uploading
 them as workflow artifacts. Known upstream findings remain marked **blocked**.
 Tests that reproduce a known dependency defect prove the diagnostic is accurate;
@@ -107,7 +107,7 @@ approval remain outside this package verification.
 ## Recorded local review, 1 October 2026
 
 The v0.1.1 wheel was installed into the Windows Python 3.12 validation environment
-with the pinned OpenCalcs host. Imports resolved from `site-packages`. With the
+with the pinned EngCalcs host. Imports resolved from `site-packages`. With the
 source-path override disabled, **46 tests passed**, including registry/API integration,
 failure injection and the four upstream diagnostics. One existing Starlette/HTTPX
 test-client deprecation warning remained. Ruff lint/format checks, distribution

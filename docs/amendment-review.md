@@ -39,7 +39,7 @@ distributed. The interpretations below are original summaries.
 
 ## Reproduced upstream integration blockers
 
-Run `python -m opencalcs_as3600.upstream_audit --output upstream-audit.json`.
+Run `python -m engcalcs_as3600.upstream_audit --output upstream-audit.json`.
 It intentionally returns exit status **1** while a listed blocker remains.
 The report records expected/actual values and keeps these failures separate from
 the passing mechanics benchmarks.

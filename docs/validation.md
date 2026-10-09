@@ -30,13 +30,13 @@ nonfinite inputs, overlapping/outside reinforcement, missing coefficients, steel
 and axial loads outside the solver's equilibrium range. Reinforcement strain is checked at each
 bar centroid because the upstream ultimate model treats bars as lumped areas.
 
-Integration checks load the installed Python entry point, use the real OpenCalcs registry,
+Integration checks load the installed Python entry point, use the real EngCalcs registry,
 exercise its HTTP API, and check attached plugin provenance. CI installs the built wheel before
 running tests and disables the source-path override so these checks exercise the distribution.
-OpenCalcs is pinned to commit `fe875fa53678afbd0cce29937d1d7b30a1fb747d`.
+EngCalcs is pinned to commit `fe875fa53678afbd0cce29937d1d7b30a1fb747d`.
 
 Supported CI interpreters are Python 3.12 and 3.13. Engineering approval, authenticated
-production execution and an OpenCalcs-UI concrete workbench are outside this package bootstrap.
+production execution and an EngCalcs-UI concrete workbench are outside this package bootstrap.
 
 ## Bootstrap evidence, 1 October 2026
 

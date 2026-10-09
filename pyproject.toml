@@ -3,9 +3,9 @@ requires = ["hatchling>=1.26,<2"]
 build-backend = "hatchling.build"
 
 [project]
-name = "opencalcs-as3600"
+name = "engcalcs-as3600"
 version = "0.1.1"
-description = "Reinforced concrete section mechanics plugin for OpenCalcs."
+description = "Reinforced concrete section mechanics plugin for EngCalcs."
 readme = "README.md"
 requires-python = ">=3.12"
 license = "AGPL-3.0-only"
@@ -32,11 +32,14 @@ dev = [
   "ruff>=0.11,<1",
 ]
 
+[project.entry-points."engcalcs.plugins"]
+as3600 = "engcalcs_as3600.plugin:get_plugin"
+
 [project.entry-points."opencalcs.plugins"]
 as3600 = "opencalcs_as3600.plugin:get_plugin"
 
 [tool.hatch.build.targets.wheel]
-packages = ["src/opencalcs_as3600"]
+packages = ["src/engcalcs_as3600", "src/opencalcs_as3600"]
 
 [tool.pytest.ini_options]
 pythonpath = ["src"]

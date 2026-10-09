@@ -24,21 +24,21 @@ jobs:
         run: ruff format --check .
       - name: Build wheel and source distribution
         run: python -m build
-      - name: Install built wheel and pinned OpenCalcs host
+      - name: Install built wheel and pinned EngCalcs host
         run: |
-          python -m pip uninstall -y opencalcs-as3600
+          python -m pip uninstall -y engcalcs-as3600
           python -m pip install dist/*.whl
-          python -m pip install "opencalcs @ git+https://github.com/Elandu/OpenCalcs.git@fe875fa53678afbd0cce29937d1d7b30a1fb747d"
+          python -m pip install "engcalcs @ git+https://github.com/Elandu/OpenCalcs.git@aecdcedfd1b4682513fa3223870576848695417a"
       - name: Run package and host integration tests
         run: python -m pytest -o pythonpath= --import-mode=importlib
       - name: Generate mechanics verification report
-        run: python -m opencalcs_as3600.verification --output artifacts/mechanics.json
+        run: python -m engcalcs_as3600.verification --output artifacts/mechanics.json
       - name: Record upstream design integration blockers
         # A nonzero audit result remains visible in its report; the design adapter is disabled.
         # Unit tests separately reproduce all four known blockers in the pinned dependency.
-        run: python -m opencalcs_as3600.upstream_audit --output artifacts/upstream-audit.json || test "$?" -eq 1
+        run: python -m engcalcs_as3600.upstream_audit --output artifacts/upstream-audit.json || test "$?" -eq 1
       - name: Render verification page
-        run: python -m opencalcs_as3600.reporting --mechanics artifacts/mechanics.json --upstream artifacts/upstream-audit.json --output artifacts/verification.html
+        run: python -m engcalcs_as3600.reporting --mechanics artifacts/mechanics.json --upstream artifacts/upstream-audit.json --output artifacts/verification.html
       - name: Upload verification evidence
         if: always()
         uses: actions/upload-artifact@v4

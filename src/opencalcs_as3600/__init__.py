@@ -1,13 +1,5 @@
-# SPDX-License-Identifier: AGPL-3.0-only
-# Copyright (c) 2026 Elandu and contributors
+"""Compatibility namespace for the former opencalcs_as3600 package."""
 
-"""OpenCalcs reinforced concrete section mechanics plugin."""
-
-from importlib.metadata import PackageNotFoundError, version
-
-try:
-    __version__ = version("opencalcs-as3600")
-except PackageNotFoundError:
-    __version__ = "0.1.1"
+from engcalcs_as3600 import __version__
 
 __all__ = ["__version__"]

@@ -3,16 +3,16 @@ from __future__ import annotations
 
 from importlib.metadata import entry_points
 
+from engcalcs.api import create_app
+from engcalcs.auth import AllowAllAuthenticator
+from engcalcs.registry import CalculationRegistry
 from fastapi.testclient import TestClient
-from opencalcs.api import create_app
-from opencalcs.auth import AllowAllAuthenticator
-from opencalcs.registry import CalculationRegistry
 
-from opencalcs_as3600.plugin import CALCULATION_ID, get_plugin
+from engcalcs_as3600.plugin import CALCULATION_ID, get_plugin
 
 
 def test_installed_entry_point_and_descriptor() -> None:
-    entry = next(item for item in entry_points(group="opencalcs.plugins") if item.name == "as3600")
+    entry = next(item for item in entry_points(group="engcalcs.plugins") if item.name == "as3600")
     plugin = entry.load()()
     assert plugin.id == "structural.as3600"
     assert plugin.version == "0.1.1"

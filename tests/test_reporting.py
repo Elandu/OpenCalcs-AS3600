@@ -1,5 +1,5 @@
 # SPDX-License-Identifier: AGPL-3.0-only
-from opencalcs_as3600.reporting import render_html
+from engcalcs_as3600.reporting import render_html
 
 
 def test_report_labels_blockers_and_escapes_recorded_text() -> None:

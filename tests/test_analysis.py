@@ -8,8 +8,8 @@ import math
 import pytest
 from jsonschema import Draft202012Validator
 
-from opencalcs_as3600.plugin import get_plugin
-from opencalcs_as3600.schemas import INPUT_SCHEMA, OUTPUT_SCHEMA
+from engcalcs_as3600.plugin import get_plugin
+from engcalcs_as3600.schemas import INPUT_SCHEMA, OUTPUT_SCHEMA
 
 
 def run(inputs: dict) -> dict:
@@ -207,6 +207,6 @@ def test_unexpected_failure_is_not_reported_as_invalid_input(
     def unexpected_failure(inputs: dict) -> dict:
         raise RuntimeError("Unexpected solver failure")
 
-    monkeypatch.setattr("opencalcs_as3600.analysis.run_analysis", unexpected_failure)
+    monkeypatch.setattr("engcalcs_as3600.analysis.run_analysis", unexpected_failure)
     with pytest.raises(RuntimeError, match="Unexpected solver failure"):
         run(section_inputs)
