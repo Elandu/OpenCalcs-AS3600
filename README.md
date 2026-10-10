@@ -1,4 +1,4 @@
-# OpenCalcs AS3600 Plugin
+# EngCalcs AS 3600 Plugin
 
 `opencalcs-as3600` is a Python plugin package maintained in this repository. OpenCalcs
 discovers it through `opencalcs.plugins`; OpenCalcs-UI owns the browser interface.
@@ -99,7 +99,6 @@ differences, tolerances and outcomes. The report keeps mechanics verification an
 unresolved design integration findings visible. CI generates reports from the installed
 wheel for both supported Python versions.
 
-## License
+## Licensing
 
-AGPL-3.0-only. Upstream dependencies retain their own licenses. Licensed standards documents
-and extracted standard text are not distributed in this repository.
+This software revision is proprietary; see `LICENSE` and `LICENSING.md`. Historic AGPL-licensed releases retain their original grants. Third-party numerical solvers including `concreteproperties` and `sectionproperties` retain their own open-source licences. Legacy `opencalcs` Python identifiers remain for compatibility.

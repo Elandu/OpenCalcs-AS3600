@@ -8,7 +8,7 @@ version = "0.1.1"
 description = "Reinforced concrete section mechanics plugin for OpenCalcs."
 readme = "README.md"
 requires-python = ">=3.12"
-license = "AGPL-3.0-only"
+license = "LicenseRef-EngCalcs-Proprietary"
 classifiers = [
   "Development Status :: 3 - Alpha",
   "Programming Language :: Python :: 3",
@@ -22,8 +22,8 @@ dependencies = [
 ]
 
 [project.urls]
-Repository = "https://github.com/Elandu/OpenCalcs-AS3600"
-Issues = "https://github.com/Elandu/OpenCalcs-AS3600/issues"
+Repository = "https://github.com/Elandu/EngCalcs-AS3600"
+Issues = "https://github.com/Elandu/EngCalcs-AS3600/issues"
 
 [project.optional-dependencies]
 dev = [
