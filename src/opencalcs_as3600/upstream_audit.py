@@ -1,4 +1,4 @@
-# SPDX-License-Identifier: AGPL-3.0-only
+# SPDX-License-Identifier: LicenseRef-EngCalcs-Proprietary
 """Reproduce design-adapter integration blockers; this adapter is not enabled.
 
 This is a bounded dependency diagnostic, not a full AS 3600 verification suite.

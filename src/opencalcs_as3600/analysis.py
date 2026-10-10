@@ -1,4 +1,4 @@
-# SPDX-License-Identifier: AGPL-3.0-only
+# SPDX-License-Identifier: LicenseRef-EngCalcs-Proprietary
 """Bounded adapter to upstream section mechanics, using mm, MPa and N internally."""
 
 from __future__ import annotations

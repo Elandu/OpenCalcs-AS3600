@@ -1,4 +1,4 @@
-# SPDX-License-Identifier: AGPL-3.0-only
+# SPDX-License-Identifier: LicenseRef-EngCalcs-Proprietary
 """Render recorded mechanics benchmarks and upstream blockers as a local HTML page."""
 
 from __future__ import annotations

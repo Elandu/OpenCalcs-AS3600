@@ -1,4 +1,4 @@
-# SPDX-License-Identifier: AGPL-3.0-only
+# SPDX-License-Identifier: LicenseRef-EngCalcs-Proprietary
 """Independent, analytical benchmarks for the nominal section mechanics adapter.
 
 These cases check a bounded rectangular-section model. They do not evaluate AS 3600
